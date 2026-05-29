@@ -12,7 +12,6 @@ export default function HeroSection() {
       {/* max-w-5xl で横幅を制限し mx-auto で中央寄せ */}
       {/* md:flex-row でPC幅以上は横並び、デフォルト（スマホ）は縦並び */}
       <div className="mx-auto max-w-5xl flex flex-col md:flex-row items-center gap-12">
-
         {/* プロフィール画像 */}
         {/* public/profile.jpg に 500×500px の画像を置いてください */}
         {/* next/image が自動でWebP変換・リサイズを行い表示を高速化する */}
@@ -20,7 +19,7 @@ export default function HeroSection() {
         <div className="flex-shrink-0">
           <Image
             src="/profile.jpg"
-            alt="戎居 俊秀のプロフィール画像"
+            alt="戎居 繁秀のプロフィール画像"
             width={200}
             height={200}
             className="rounded-full object-cover shadow-md"
@@ -36,7 +35,7 @@ export default function HeroSection() {
           </p>
           {/* h1 はページ内で1つだけ使うSEO上重要なタグ */}
           <h1 className="text-4xl md:text-5xl font-bold mb-4 text-gray-900">
-            戎居 俊秀
+            戎居 繁秀
           </h1>
           <p className="text-lg text-gray-600 max-w-lg leading-relaxed">
             理学療法士として培った「観察力・課題発見力」を武器に、

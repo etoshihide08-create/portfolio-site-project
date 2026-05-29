@@ -18,24 +18,24 @@ const geistMono = Geist_Mono({
 // Next.js が <head> タグ内に自動挿入してくれるので直接 <head> を書かなくていい
 export const metadata: Metadata = {
   // ブラウザのタブに表示されるタイトル
-  title: "戎居 俊秀 | ポートフォリオ",
+  title: "戎居 繁秀 | ポートフォリオ",
   // Google検索の説明文（160文字以内が推奨）
   description:
-    "理学療法士からITエンジニアへ転身中の戎居俊秀のポートフォリオサイト。Next.js / TypeScript / Tailwind CSS で構築。",
+    "理学療法士からITエンジニアへ転身中の戎居繁秀のポートフォリオサイト。Next.js / TypeScript / Tailwind CSS で構築。",
   // OGタグ：SNSでシェアされたときのカード表示に使われる
   openGraph: {
-    title: "戎居 俊秀 | ポートフォリオ",
+    title: "戎居 繁秀 | ポートフォリオ",
     description:
-      "理学療法士からITエンジニアへ転身中の戎居俊秀のポートフォリオサイトです。",
+      "理学療法士からITエンジニアへ転身中の戎居繁秀のポートフォリオサイトです。",
     url: "https://portfolio-site-project-puce.vercel.app",
-    siteName: "戎居 俊秀 | ポートフォリオ",
+    siteName: "戎居 繁秀 | ポートフォリオ",
     // OG画像はSNSカードのサムネイルになる（public/og-image.png を置いておく）
     images: [
       {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "戎居 俊秀 | ポートフォリオ",
+        alt: "戎居 繁秀 | ポートフォリオ",
       },
     ],
     locale: "ja_JP",
