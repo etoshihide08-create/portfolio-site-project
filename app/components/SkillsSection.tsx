@@ -1,7 +1,6 @@
 // サーバーコンポーネント（動きがないので "use client" 不要）
 
 // スキルグループの型定義
-// TypeScriptの型で「何が入るべきか」を明示する
 type SkillGroup = {
   title: string;
   skills: string[];
@@ -12,21 +11,20 @@ type SkillGroup = {
 const skillGroups: SkillGroup[] = [
   {
     title: "実務で使用",
-    skills: ["Python", "Git", "GitHub", "Slack", "Notion"],
+    skills: ["WordPress / CSS", "HTML / CSS", "Python", "AIエージェント活用"],
   },
   {
     title: "このポートフォリオで実装",
-    skills: ["Next.js", "TypeScript", "Tailwind CSS", "Supabase", "Vercel"],
+    skills: ["Next.js", "TypeScript", "Tailwind CSS", "Git / GitHub", "Vercel", "Supabase"],
   },
   {
     title: "Web・マーケ経験",
-    skills: ["HTML/CSS", "WordPress", "Google Analytics", "SEO基礎"],
+    skills: ["LP制作・広告運用", "LINEステップ構築", "SEO / GEO記事", "デザイン制作"],
   },
 ];
 
 export default function SkillsSection() {
   return (
-    // 背景なし（白）でAboutセクションと交互に見せる
     <section id="skills" className="py-24 px-4">
       <div className="mx-auto max-w-5xl">
         <h2 className="text-3xl font-bold mb-12 text-center text-gray-900">
@@ -36,7 +34,6 @@ export default function SkillsSection() {
         {/* grid md:grid-cols-3 でPC以上は3列、スマホは1列 */}
         <div className="grid md:grid-cols-3 gap-6">
           {skillGroups.map((group) => (
-            // 各グループをカードとして表示
             <div
               key={group.title}
               className="bg-gray-50 rounded-xl p-6 border border-gray-100"
