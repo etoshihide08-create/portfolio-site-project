@@ -17,6 +17,9 @@ const geistMono = Geist_Mono({
 // メタデータAPIで SEO・SNSシェア用の情報を一元管理する
 // Next.js が <head> タグ内に自動挿入してくれるので直接 <head> を書かなくていい
 export const metadata: Metadata = {
+  // OG画像など相対URLを絶対URLに解決するための基準URL
+  // これがないと本番でもlocalhost:3000基準になりSNSカードの画像が表示されない
+  metadataBase: new URL("https://portfolio-site-project-puce.vercel.app"),
   // ブラウザのタブに表示されるタイトル
   title: "戎居 繁秀 | ポートフォリオ",
   // Google検索の説明文（160文字以内が推奨）
