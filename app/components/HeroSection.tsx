@@ -11,7 +11,6 @@ export default function HeroSection() {
       {/* max-w-5xl で横幅を制限し mx-auto で中央寄せ */}
       {/* md:flex-row でPC幅以上は横並び、デフォルト（スマホ）は縦並び */}
       <div className="mx-auto max-w-5xl flex flex-col md:flex-row items-center gap-12">
-
         {/* プロフィール画像 */}
         {/* public/profile.jpg に 500×500px の画像を置いてください */}
         {/* next/image が自動でWebP変換・リサイズを行い表示を高速化する */}
@@ -38,7 +37,7 @@ export default function HeroSection() {
             戎居 繁秀
           </h1>
           <p className="text-lg text-gray-600 max-w-lg leading-relaxed">
-            現場で培った対人理解力を、ユーザー視点のものづくりへ。
+            理学療法士からIT領域へ。企業成長や医療DXへの貢献を目指して、学びと実践に取り組んでいます。
           </p>
 
           {/* CTAボタン */}
