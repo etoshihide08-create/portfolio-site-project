@@ -6,7 +6,7 @@ type SkillGroup = {
   skills: string[];
 };
 
-// 3グループのスキルデータを配列で定義
+// スキルデータをグループごとに配列で定義
 // → グループや項目を増やしても表示コンポーネントは変えなくてよい（データと表示の分離）
 const skillGroups: SkillGroup[] = [
   {
@@ -16,6 +16,20 @@ const skillGroups: SkillGroup[] = [
   {
     title: "このポートフォリオで実装",
     skills: ["Next.js", "TypeScript", "Tailwind CSS", "Git / GitHub", "Vercel", "Supabase"],
+  },
+  {
+    // 個人開発（Reha Evidence など）でAIエージェントを活用しながら触れた技術
+    title: "AIエージェント活用で開発",
+    skills: [
+      "FastAPI",
+      "SQLite",
+      "JavaScript",
+      "OpenAI API",
+      "PubMed API",
+      "Google OAuth",
+      "Stripe",
+      "Resend",
+    ],
   },
   {
     title: "Web・マーケ経験",

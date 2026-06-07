@@ -26,9 +26,9 @@ const projects: Project[] = [
   {
     title: "Reha Evidence（リハビリ論文 日本語検索アプリ）",
     description:
-      "AIエージェント（Claude Code・Codex）を活用し Python で開発したWebアプリ。英語の医学・リハビリ論文を日本語で検索し、結果を保存できる。理学療法士としての経験を活かし、現場で使えるエビデンス収集を効率化することを目的に制作。Railway でデプロイ・公開中。",
-    tags: ["Python", "AIエージェント", "Webアプリ", "Railway"],
-    siteUrl: "https://reha-evidence.up.railway.app/",
+      "AIエージェント（Claude Code・Codex）を活用して開発中のWebアプリ。PubMed API で英語の医学・リハビリ論文を検索し、OpenAI API で日本語に要約・翻訳して保存できる。FastAPI＋SQLite を基盤に、Google OAuth 認証・Stripe による決済（サブスク）・Resend でのメール送信まで実装。理学療法士の経験を活かし、現場で使えるエビデンス収集の効率化を目指している。",
+    tags: ["Python", "FastAPI", "SQLite", "PubMed API", "OpenAI API", "Stripe", "Railway"],
+    siteUrl: "https://app.reha-evidence.com/",
   },
   {
     title: "Sales List Builder",
