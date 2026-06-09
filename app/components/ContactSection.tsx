@@ -2,6 +2,7 @@
 // フォームは入力・送信というユーザー操作（イベント）を扱うため "use client" が必要
 
 import { useState } from "react";
+import { submitContact } from "../actions";
 
 // フォームの入力値を管理する型
 type FormState = {
@@ -24,6 +25,9 @@ export default function ContactSection() {
   // 送信状態を管理（idle=未送信, loading=送信中, success=成功, error=失敗）
   const [status, setStatus] = useState<SubmitStatus>("idle");
 
+  // サーバーから返ってきたエラーメッセージを表示するための状態
+  const [errorMessage, setErrorMessage] = useState("");
+
   // 入力フィールドが変わるたびに呼ばれる汎用ハンドラ
   // e.target.name でどのフィールドかを識別し、スプレッド構文で更新する
   function handleChange(
@@ -37,20 +41,17 @@ export default function ContactSection() {
     // ブラウザのデフォルトのページリロードを止める
     e.preventDefault();
     setStatus("loading");
+    setErrorMessage("");
 
-    try {
-      // TODO: Supabase 連携
-      // 以下の手順で Supabase にデータを保存できる：
-      // 1. npm install @supabase/supabase-js
-      // 2. .env.local に NEXT_PUBLIC_SUPABASE_URL, NEXT_PUBLIC_SUPABASE_ANON_KEY を設定
-      // 3. lib/supabase.ts でクライアントを作成
-      // 4. supabase.from('contacts').insert([{ ...form }]) で保存
+    // Server Action を呼び出す（裏側でサーバーに送られ、Supabaseへ保存される）
+    const result = await submitContact(form);
 
-      // 現時点では1秒待ってから成功を返す（動作確認用のモック）
-      await new Promise((resolve) => setTimeout(resolve, 1000));
+    if (result.ok) {
       setStatus("success");
       setForm({ name: "", email: "", message: "" });
-    } catch {
+    } else {
+      // サーバーが返した理由を表示する
+      setErrorMessage(result.error);
       setStatus("error");
     }
   }
@@ -140,10 +141,10 @@ export default function ContactSection() {
                   />
                 </div>
 
-                {/* error のときはエラーメッセージを表示 */}
+                {/* error のときはサーバーから返ったエラー理由を表示 */}
                 {status === "error" && (
                   <p className="text-red-600 text-sm">
-                    送信に失敗しました。もう一度お試しください。
+                    {errorMessage || "送信に失敗しました。もう一度お試しください。"}
                   </p>
                 )}
 
